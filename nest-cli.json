@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/movie-rest/src",
+  "monorepo": true,
+  "root": "apps/movie-rest",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/movie-rest/tsconfig.app.json"
+  },
+  "projects": {
+    "movie-app": {
+      "type": "application",
+      "root": "apps/movie-app",
+      "entryFile": "main",
+      "sourceRoot": "apps/movie-app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/movie-app/tsconfig.app.json"
+      }
+    },
+    "movie-rest": {
+      "type": "application",
+      "root": "apps/movie-rest",
+      "entryFile": "main",
+      "sourceRoot": "apps/movie-rest/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/movie-rest/tsconfig.app.json"
+      }
+    },
+    "movie-gql": {
+      "type": "application",
+      "root": "apps/movie-gql",
+      "entryFile": "main",
+      "sourceRoot": "apps/movie-gql/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/movie-gql/tsconfig.app.json"
+      }
+    }
+  }
+}
