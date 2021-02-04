@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
-import { MovieRestController } from './movie-rest.controller';
-import { MovieRestService } from './movie-rest.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { MovieModule } from './movie/movie.module';
 
 @Module({
   imports: [
@@ -10,8 +9,9 @@ import { MongooseModule } from '@nestjs/mongoose';
       envFilePath: '.env',
     }),
     MongooseModule.forRoot(`${process.env.MONGODB_URI}/${process.env.DB_NAME}`),
+    MovieModule,
   ],
-  controllers: [MovieRestController],
-  providers: [MovieRestService],
+  controllers: [],
+  providers: [],
 })
 export class MovieRestModule {}
