@@ -11,7 +11,5 @@ import { MovieModule } from './movie/movie.module';
     MongooseModule.forRoot(`${process.env.MONGODB_URI}/${process.env.DB_NAME}`),
     MovieModule,
   ],
-  controllers: [],
-  providers: [],
 })
-export class MovieRestModule {}
+export class AppModule {}

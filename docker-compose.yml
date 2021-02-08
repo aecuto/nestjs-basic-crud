@@ -7,7 +7,7 @@ services:
     volumes:
       - ./:/app
     ports:
-      - 8000:4000
+      - 8000:8000
     depends_on:
       - mongo
     command: ['yarn', 'start:dev']

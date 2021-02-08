@@ -11,6 +11,7 @@ import {
   Put,
   Delete,
 } from '@nestjs/common';
+import { validateOrReject } from 'class-validator';
 import { ObjectId } from 'mongoose';
 import { CreateMovieDto } from './dto/create-movie';
 import { PaginationQueryDto } from './dto/pagination-query';
