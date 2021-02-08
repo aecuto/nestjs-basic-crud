@@ -1,10 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, ObjectId } from 'mongoose';
-import { Movie, MovieDocument } from 'schemas/movie.schema';
-import { CreateMovieDto } from './dto/create-movie';
-import { PaginationQueryDto } from './dto/pagination-query';
-import { UpdateMovieDto } from './dto/update.movie';
+import { Movie, MovieDocument } from './movie.schema';
+
+import { CreateMovieDto, UpdateMovieDto, PaginationQueryDto } from 'types/dto';
 
 @Injectable()
 export class MovieService {
