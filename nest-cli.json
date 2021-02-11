@@ -25,6 +25,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/movie-gql/tsconfig.app.json"
       }
+    },
+    "movie-postgresql": {
+      "type": "application",
+      "root": "apps/movie-postgresql",
+      "entryFile": "main",
+      "sourceRoot": "apps/movie-postgresql/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/movie-postgresql/tsconfig.app.json"
+      }
     }
   }
 }

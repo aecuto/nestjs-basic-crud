@@ -12,7 +12,9 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "types/*": ["types/*"]
+      "types/*": [
+        "types/*"
+      ]
     }
   }
 }
