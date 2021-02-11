@@ -12,9 +12,9 @@ import {
   Delete,
 } from '@nestjs/common';
 import { ObjectId } from 'mongoose';
-import { CreateMovieDto } from '../../../../types/dto/create-movie';
-import { PaginationQueryDto } from '../../../../types/dto/pagination-query';
-import { UpdateMovieDto } from '../../../../types/dto/update.movie';
+import { CreateMovieDto } from './dto/create-movie';
+import { PaginationQueryDto } from './dto/pagination-query';
+import { UpdateMovieDto } from './dto/update.movie';
 import { MovieService } from './movie.service';
 
 @Controller('movie')

@@ -3,7 +3,11 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model, ObjectId } from 'mongoose';
 import { Movie, MovieDocument } from './movie.schema';
 
-import { CreateMovieDto, UpdateMovieDto, PaginationQueryDto } from 'types/dto';
+import {
+  CreateMovieDto,
+  UpdateMovieDto,
+  PaginationQueryDto,
+} from 'apps/movie-rest/src/movie/dto';
 
 @Injectable()
 export class MovieService {
