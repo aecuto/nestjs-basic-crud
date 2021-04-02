@@ -17,7 +17,7 @@ import { PaginationQueryDto } from './dto/pagination-query';
 import { UpdateMovieDto } from './dto/update.movie';
 import { MovieService } from './movie.service';
 
-@Controller('movie')
+@Controller('api/v1/movie')
 export class MovieController {
   constructor(private movieService: MovieService) {}
 

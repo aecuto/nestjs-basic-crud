@@ -39,8 +39,8 @@ export class MoviesService {
   }
 
   async update(id: number, values: UpdateMovieDto): Promise<Movies> {
-    const movie = await this.moviesRepository.findOne(id);
-    if (!movie) {
+    const product = await this.moviesRepository.findOne(id);
+    if (!product) {
       throw new NotFoundException(`Movie #${id} not found`);
     }
 
@@ -50,6 +50,10 @@ export class MoviesService {
   }
 
   async remove(id: number): Promise<void> {
+    const product = await this.moviesRepository.findOne(id);
+    if (!product) {
+      throw new NotFoundException(`Movie #${id} not found`);
+    }
     await this.moviesRepository.delete(id);
   }
 }
