@@ -15,6 +15,7 @@ import { MoviesModule } from './movies/movies.module';
       username: 'moviedb',
       password: 'moviedb',
       database: 'moviedb',
+      autoLoadEntities: true,
       entities: [__dirname + './**/*.entity.ts'],
       migrations: ['migration/*.ts'],
       cli: {

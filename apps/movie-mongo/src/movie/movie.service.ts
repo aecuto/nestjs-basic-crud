@@ -7,7 +7,7 @@ import {
   CreateMovieDto,
   UpdateMovieDto,
   PaginationQueryDto,
-} from 'apps/movie-rest/src/movie/dto';
+} from 'apps/movie-mongo/src/movie/dto';
 
 @Injectable()
 export class MovieService {
