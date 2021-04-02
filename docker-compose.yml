@@ -1,24 +1,36 @@
 version: '3'
 
 services:
-  app:
-    image: node:14-alpine
-    working_dir: /app
-    volumes:
-      - ./:/app
+  # app:
+  #   image: node:14-alpine
+  #   working_dir: /app
+  #   volumes:
+  #     - ./:/app
+  #   ports:
+  #     - 8000:8000
+  #   depends_on:
+  #     - postgres
+  #   command: ['yarn', 'start:dev']
+  postgres:
+    image: postgres
     ports:
-      - 8000:8000
-    depends_on:
-      - mongo
-    command: ['yarn', 'start:dev']
-  mongo:
-    image: mongo
-    ports:
-      - 27018:27017
+      - 5432:5432
     env_file:
       - .env
     environment:
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_PASS}
-      - MONGO_INITDB_ROOT_USERNAME=${MONGODB_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_DB}
     volumes:
-      - ./mongo:/data/db
+      - ./postgres:/var/lib/postgresql/data
+  # mongo:
+  #   image: mongo
+  #   ports:
+  #     - 27018:27017
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_PASS}
+  #     - MONGO_INITDB_ROOT_USERNAME=${MONGODB_USER}
+  #   volumes:
+  #     - ./mongo:/data/db
