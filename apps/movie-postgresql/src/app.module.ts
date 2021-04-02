@@ -3,26 +3,14 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { MoviesModule } from './movies/movies.module';
+import ormconfig from './ormconfig';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'moviedb',
-      password: 'moviedb',
-      database: 'moviedb',
-      autoLoadEntities: true,
-      entities: [__dirname + './**/*.entity.ts'],
-      migrations: ['migration/*.ts'],
-      cli: {
-        migrationsDir: 'migration',
-      },
-    }),
+    TypeOrmModule.forRoot({ ...ormconfig, autoLoadEntities: true }),
     MoviesModule,
   ],
   controllers: [AppController],
