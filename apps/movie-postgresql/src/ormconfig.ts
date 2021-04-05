@@ -8,9 +8,9 @@ const config: ConnectionOptions = {
   password: 'moviedb',
   database: 'moviedb',
   entities: [__dirname + '/**/*.entity.ts'],
-  migrations: [__dirname + '/migrations/**/*.ts'],
+  migrations: ['apps/movie-postgresql/migrations/**/*.ts'],
   cli: {
-    migrationsDir: __dirname + '/migrations',
+    migrationsDir: 'apps/movie-postgresql/migrations',
   },
 };
 
