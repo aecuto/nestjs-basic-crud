@@ -25,16 +25,16 @@ export class MovieResolver {
   }
 
   @Mutation(() => MovieType)
-  async create(@Args('movieInput') movieInput: MovieCreate): Promise<Movie> {
-    return this.movieService.create(movieInput);
+  async create(@Args('data') data: MovieCreate): Promise<Movie> {
+    return this.movieService.create(data);
   }
 
   @Mutation(() => MovieType)
   async update(
     @Args('id') id: string,
-    @Args('movieInput') movieInput: MovieUpdate,
+    @Args('data') data: MovieUpdate,
   ): Promise<Movie> {
-    return this.movieService.update(id, movieInput);
+    return this.movieService.update(id, data);
   }
 
   @Mutation(() => MovieType)

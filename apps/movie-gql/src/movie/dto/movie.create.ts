@@ -1,5 +1,5 @@
 import { Field, Float, InputType } from '@nestjs/graphql';
-import { IsOptional, Length, MaxLength } from 'class-validator';
+import { IsOptional, MaxLength } from 'class-validator';
 
 @InputType()
 export class MovieCreate {
@@ -12,6 +12,6 @@ export class MovieCreate {
 
   @Field({ nullable: true })
   @IsOptional()
-  @Length(30, 255)
+  @MaxLength(100)
   detail?: string;
 }
