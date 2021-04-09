@@ -2,4 +2,4 @@
 
 - Restful with MongoDB
 - Restful With Postgresql + typeorm + Migrations
-- Graphql Mongo (not yet)
+- Graphql MongoDB
